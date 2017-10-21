@@ -103,6 +103,9 @@ public class OcrGraphic extends GraphicOverlay.Graphic {
         if (text == null) {
             return;
         }
+        if (TextBlockTracker.getStatus() == true){
+            TextBlockTracker.addBlock(text);
+        }
 
         // Draws the bounding box around the TextBlock.
         RectF rect = new RectF(text.getBoundingBox());

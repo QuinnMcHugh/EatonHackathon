@@ -51,6 +51,7 @@ import com.google.android.gms.vision.text.TextRecognizer;
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;
+import java.util.List;
 
 /**
  * Activity for the multi-tracker app.  This app detects text and displays the value with the
@@ -97,16 +98,10 @@ public final class OcrCaptureActivity extends AppCompatActivity {
         public void run() {
             Activity activity = mActivity.get();
             if (activity != null) {
-                // capture text from screen
-                Log.d("D", "grabbing ocr detection results...");
+                TextBlockTracker.turnOff();
 
-                for (int j = 0; j < mDetectorProcessor.getDetectedBlocks().size(); j++){
-                    TextBlock block = mDetectorProcessor.getDetectedBlocks().get(j);
-                    if (block != null){
-                        String text = block.getValue();
-                        Log.d("D", "scraped value " + j + ": " + text);
-                    }
-                }
+                List<TextBlock> blocks = TextBlockTracker.getBlocks();
+                OcrResult result = new OcrResult(blocks);
             }
         }
     }
@@ -360,11 +355,8 @@ public final class OcrCaptureActivity extends AppCompatActivity {
      * @return true if the activity is ending.
      */
     private boolean onTap(float rawX, float rawY) {
-
-
-        for (int i = 0; i < 10; i++){ // take 5 images
-            mHandler.postDelayed(mRunnable, i * 100);
-        }
+        TextBlockTracker.turnOn();
+        mHandler.postDelayed(mRunnable, 2000);
 
         OcrGraphic graphic = mGraphicOverlay.getGraphicAtLocation(rawX, rawY);
         TextBlock text = null;
