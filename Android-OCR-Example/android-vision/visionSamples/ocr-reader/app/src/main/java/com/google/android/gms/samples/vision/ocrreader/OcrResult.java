@@ -3,6 +3,7 @@ package com.google.android.gms.samples.vision.ocrreader;
 import android.graphics.Point;
 import android.util.Log;
 
+import com.google.android.gms.vision.text.Text;
 import com.google.android.gms.vision.text.TextBlock;
 
 import java.util.HashMap;
@@ -23,12 +24,19 @@ public class OcrResult {
 
     private void parseInput(List<TextBlock> inputBlocks){
         for (TextBlock block : inputBlocks){
-            Log.d("D", "Value: " + block.getValue());
-            for (Point point : block.getCornerPoints()){
-                Log.d("D", "Point: " + point.toString());
+            if (block.getComponents().isEmpty()) {
+                Log.d("D", "Value: " + block.getValue());
+                for (Point point : block.getCornerPoints()) {
+                    Log.d("D", "Point: " + point.toString());
+                }
+            } else {
+                for (Text line : block.getComponents()) {
+                    Log.d("D", "Value: " + line.getValue());
+                    for (Point point : line.getCornerPoints()) {
+                        Log.d("D", "Point: " + point.toString());
+                    }
+                }
             }
-
-            Log.d("D", "");
         }
     }
 }
