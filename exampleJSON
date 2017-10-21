@@ -1,0 +1,130 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "definitions": {},
+  "id": "http://eaton.com/example.json",
+  "properties": {
+    "mandatory": {
+      "id": "/properties/mandatory",
+      "properties": {
+        "brand": {
+          "default": "",
+          "description": "The brand or subsidiary of the product.",
+          "examples": [
+            ""
+          ],
+          "id": "/properties/mandatory/properties/brand",
+          "title": "The brand schema.",
+          "type": "string"
+        },
+        "catalogStyleNum": {
+          "default": "",
+          "description": "The catalog number or style number of the product.",
+          "examples": [
+            ""
+          ],
+          "id": "/properties/mandatory/properties/catalogStyleNum",
+          "title": "The catalogstylenum schema.",
+          "type": "string"
+        },
+        "orderNum": {
+          "default": "",
+          "description": "The GO or PO of the product.",
+          "examples": [
+            ""
+          ],
+          "id": "/properties/mandatory/properties/orderNum",
+          "title": "The ordernum schema.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "optional": {
+      "id": "/properties/optional",
+      "properties": {
+        "drawingNum": {
+          "default": "",
+          "description": "The drawing number of the product.",
+          "examples": [
+            ""
+          ],
+          "id": "/properties/optional/properties/drawingNum",
+          "title": "The drawingnum schema.",
+          "type": "string"
+        },
+        "manufacturingDate": {
+          "default": "",
+          "description": "The manufacturing date of the product.",
+          "examples": [
+            ""
+          ],
+          "id": "/properties/optional/properties/manufacturingDate",
+          "title": "The manufacturingdate schema.",
+          "type": "string"
+        },
+        "manufacturingLoc": {
+          "default": "",
+          "description": "The manufacturing location of the product.",
+          "examples": [
+            ""
+          ],
+          "id": "/properties/optional/properties/manufacturingLoc",
+          "title": "The manufacturingloc schema.",
+          "type": "string"
+        },
+        "physicalLoc": {
+          "default": "",
+          "description": "The physical location of the product.",
+          "examples": [
+            ""
+          ],
+          "id": "/properties/optional/properties/physicalLoc",
+          "title": "The physicalloc schema.",
+          "type": "string"
+        },
+        "range": {
+          "default": "",
+          "description": "The range of the product.",
+          "examples": [
+            ""
+          ],
+          "id": "/properties/optional/properties/range",
+          "title": "The range schema.",
+          "type": "string"
+        },
+        "serialNum": {
+          "default": "",
+          "description": "The serial number of the product.",
+          "examples": [
+            ""
+          ],
+          "id": "/properties/optional/properties/serialNum",
+          "title": "The serialnum schema.",
+          "type": "string"
+        },
+        "unitNum": {
+          "default": "",
+          "description": "The unit number of the product.",
+          "examples": [
+            ""
+          ],
+          "id": "/properties/optional/properties/unitNum",
+          "title": "The unitnum schema.",
+          "type": "string"
+        },
+        "voltage": {
+          "default": "",
+          "description": "The voltage of the product.",
+          "examples": [
+            ""
+          ],
+          "id": "/properties/optional/properties/voltage",
+          "title": "The voltage schema.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "type": "object"
+}
